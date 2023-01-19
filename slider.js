@@ -18,6 +18,18 @@ function Next() {
     }, 500);
 }
 
+function Prev() {
+    let sliderSectionFirst = document.querySelectorAll(".slider__section")[0];
+    slider.style.marginLeft = "-200%";
+    slider.style.transition = "all 0.5s";
+    setTimeout(function() {
+        slider.style.transition = "none";
+        slider.insertAdjacentElement('beforeend', sliderSectionFirst);
+        slider.style.marginLeft = "-100%";
+    }, 500);
+}
+
+
 btnRight.addEvenetList('click', function(){
     Next();
 });
